@@ -8,7 +8,7 @@ public interface Tokenizer {
 
     Stream<String> tokenize(String paragraph);
 
-    boolean isStopWord(String word) throws IOException;
+    boolean isValidWord(String word) throws IOException;
 
     String normalize(String word);
 

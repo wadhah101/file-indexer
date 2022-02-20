@@ -1,7 +1,6 @@
 package org.example.Tokenization;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -30,7 +29,7 @@ public class EnglishSimpleTokenizer implements Tokenizer {
     }
 
     @Override
-    public boolean isStopWord(String word) {
+    public boolean isValidWord(String word) {
         HashSet<String> skipsSets = new HashSet<>(this.standardStopWord);
         return !skipsSets.contains(word);
     }
@@ -47,6 +46,6 @@ public class EnglishSimpleTokenizer implements Tokenizer {
 
     @Override
     public Stream<String> pipeline(String paragraph) {
-        return this.tokenize(paragraph).map(this::normalize).filter(this::isStopWord).map(this::lemma);
+        return this.tokenize(paragraph).map(this::normalize).filter(this::isValidWord).map(this::lemma);
     }
 }
