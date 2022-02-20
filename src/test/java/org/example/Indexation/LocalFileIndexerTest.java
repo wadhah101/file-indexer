@@ -2,6 +2,7 @@ package org.example.Indexation;
 
 import junit.framework.TestCase;
 import org.example.Tokenization.EnglishSimpleTokenizer;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.SortedMap;
@@ -12,6 +13,7 @@ public class LocalFileIndexerTest extends TestCase {
         super.setUp();
     }
 
+    @Test
     public void testLoadFile() throws IOException {
         LocalFileIndexer indexer = new LocalFileIndexer(new EnglishSimpleTokenizer());
         indexer.loadFile("indexFiles/anarchism.txt");
@@ -20,6 +22,7 @@ public class LocalFileIndexerTest extends TestCase {
         assertFalse(example.isEmpty());
     }
 
+    @Test
     public void testLoadFolder() {
         LocalFileIndexer indexer = new LocalFileIndexer(new EnglishSimpleTokenizer());
         indexer.loadFolder("indexFiles");
@@ -28,6 +31,7 @@ public class LocalFileIndexerTest extends TestCase {
         assertFalse(example.isEmpty());
     }
 
+    @Test
     public void testAddToIndex() {
         LocalFileIndexer indexer = new LocalFileIndexer(new EnglishSimpleTokenizer());
         SortedMap<String, SortedMap<String, Integer>> index = indexer.getIndex();
@@ -37,6 +41,4 @@ public class LocalFileIndexerTest extends TestCase {
 
     }
 
-    public void testGetIndex() {
-    }
 }
