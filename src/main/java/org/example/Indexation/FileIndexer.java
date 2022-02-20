@@ -1,6 +1,5 @@
 package org.example.Indexation;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface FileIndexer extends Indexer {
