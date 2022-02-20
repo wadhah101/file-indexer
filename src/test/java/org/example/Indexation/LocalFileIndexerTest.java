@@ -13,20 +13,28 @@ public class LocalFileIndexerTest extends TestCase {
     }
 
     public void testLoadFile() throws IOException {
-        LocalFileIndexer a = new LocalFileIndexer(new EnglishSimpleTokenizer());
-        a.loadFile("indexFiles/anarchism.txt");
-        SortedMap<String, SortedMap<String, Integer>> q = a.getIndex();
-        System.out.println(q.toString());
+        LocalFileIndexer indexer = new LocalFileIndexer(new EnglishSimpleTokenizer());
+        indexer.loadFile("indexFiles/anarchism.txt");
+        SortedMap<String, SortedMap<String, Integer>> index = indexer.getIndex();
+        SortedMap<String, Integer> example = index.get("early");
+        assertFalse(example.isEmpty());
     }
 
     public void testLoadFolder() {
-        LocalFileIndexer a = new LocalFileIndexer(new EnglishSimpleTokenizer());
-        a.loadFolder("indexFiles");
-        SortedMap<String, SortedMap<String, Integer>> q = a.getIndex();
-        System.out.println(q.toString());
+        LocalFileIndexer indexer = new LocalFileIndexer(new EnglishSimpleTokenizer());
+        indexer.loadFolder("indexFiles");
+        SortedMap<String, SortedMap<String, Integer>> index = indexer.getIndex();
+        SortedMap<String, Integer> example = index.get("early");
+        assertFalse(example.isEmpty());
     }
 
     public void testAddToIndex() {
+        LocalFileIndexer indexer = new LocalFileIndexer(new EnglishSimpleTokenizer());
+        SortedMap<String, SortedMap<String, Integer>> index = indexer.getIndex();
+        indexer.addToIndex("test", "test/location.txt", 25);
+        SortedMap<String, Integer> item = index.get("test");
+        assertEquals(item.get("test/location.txt"), Integer.valueOf(25));
+
     }
 
     public void testGetIndex() {
