@@ -9,5 +9,7 @@ The indexFiles folder have examples paragraphs to work on.
 ## Example
 
 indexing "indexFiles" folder and running "early innocence" will give you as a result:
+
          File : /home/wat101/IdeaProjects/assignment/indexFiles/anarchism.txt, Score 3
+         
          File : /home/wat101/IdeaProjects/assignment/indexFiles/stories/to-kill-a-mocking-bird.txt, Score 1
