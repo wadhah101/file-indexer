@@ -1,7 +1,6 @@
 package org.example.querying;
 
 import java.util.Map;
-import java.util.SortedMap;
 
 import org.example.Indexation.LocalFileIndexer;
 import org.example.Tokenization.EnglishSimpleTokenizer;
