@@ -1,0 +1,5 @@
+JetBrains s.r.o. (formerly IntelliJ Software s.r.o.) is a Czech[2] software development company which makes tools for software developers and project managers.[3][4] As of 2019, the company has offices in Prague, Saint Petersburg, Moscow, Munich, Boston, Novosibirsk, Amsterdam, Foster City and Marlton, New Jersey.[5][6][7][8]
+
+The company offers many integrated development environments (IDE) for the programming languages Java, Groovy, Kotlin, Ruby, Python, PHP, C, Objective-C, C++, C#, Go,[9] JavaScript, and the domain-specific language SQL. The company created the Kotlin programming language, which can run in a Java virtual machine (JVM), in 2011.
+
+InfoWorld magazine awarded the firm "Technology of the Year Award" in 2011 and 2015.[10][11] 

@@ -64,6 +64,8 @@ public class App {
 
         } else {
             System.out.println("Invalid file path");
+            System.out.println("#######################\n");
+
         }
     }
 
@@ -76,7 +78,9 @@ public class App {
             System.out.println("#######################\n");
 
         } else {
-            System.out.println("Invalid directory path");
+            System.err.println("Invalid directory path");
+            System.err.println("#######################\n");
+
         }
     }
 
@@ -94,7 +98,7 @@ public class App {
         }
 
         Stream<Entry<String, Integer>> formatterResult = result.entrySet().stream()
-                .sorted((x, y) -> x.getValue() - y.getValue());
+                .sorted((x, y) -> y.getValue() - x.getValue());
 
         System.out.println("\n##################");
         System.out.println("\tResult:");
@@ -105,5 +109,4 @@ public class App {
         System.out.println("##################\n");
 
     }
-
 }

@@ -1,7 +1,5 @@
 package org.example.querying;
 
-import org.example.Tokenization.Tokenizer;
-
 import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
