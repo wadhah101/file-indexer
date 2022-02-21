@@ -3,17 +3,18 @@ package org.example.querying;
 import org.example.Tokenization.Tokenizer;
 
 import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.Map.Entry;
+import java.util.stream.Stream;
 
 public interface QueryRunner {
-    void setIndex();
 
-    void setTokenizer(Tokenizer tokenizer);
+    SortedMap<String, Integer> searchWord(String word);
 
-    Object searchWord(String word);
+    Stream<Entry<String, Integer>> searchWords(List<String> words);
 
-    Object searchWords(List<String> words);
+    Stream<String> tokenizeQuery(String query);
 
-    Object tokenizeQuery(String query);
-
-    Object runQuery(String query);
+    Map<String, Integer> runQuery(String query);
 }

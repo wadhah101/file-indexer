@@ -6,4 +6,6 @@ public interface Indexer {
     void addToIndex(String token, String location, int count);
 
     SortedMap<String, SortedMap<String, Integer>> getIndex();
+
+    void resetIndex();
 }

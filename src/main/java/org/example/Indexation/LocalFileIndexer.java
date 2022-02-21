@@ -1,6 +1,5 @@
 package org.example.Indexation;
 
-
 import org.apache.commons.io.FileUtils;
 import org.example.Tokenization.Tokenizer;
 
@@ -14,9 +13,8 @@ import java.util.stream.Stream;
 
 public class LocalFileIndexer implements FileIndexer {
 
-    private final TreeMap<String, SortedMap<String, Integer>> inverseIndex;
+    private TreeMap<String, SortedMap<String, Integer>> inverseIndex;
     private final Tokenizer tokenizer;
-
 
     public void loadFile(String path) throws IOException {
         BufferedReader reader;
@@ -31,7 +29,7 @@ public class LocalFileIndexer implements FileIndexer {
     }
 
     public void loadFolder(String path) {
-        Stream<String> a = FileUtils.listFiles(new File(path), new String[]{"txt"}, true)
+        Stream<String> a = FileUtils.listFiles(new File(path), new String[] { "txt" }, true)
                 .stream().map(File::getAbsolutePath);
         a.forEach(e -> {
             try {
@@ -41,7 +39,6 @@ public class LocalFileIndexer implements FileIndexer {
             }
         });
     }
-
 
     public LocalFileIndexer(Tokenizer tokenizer) {
         this.tokenizer = tokenizer;
@@ -67,9 +64,13 @@ public class LocalFileIndexer implements FileIndexer {
         }
     }
 
-
     @Override
     public SortedMap<String, SortedMap<String, Integer>> getIndex() {
         return this.inverseIndex;
+    }
+
+    @Override
+    public void resetIndex() {
+        this.inverseIndex = new TreeMap<>();
     }
 }
