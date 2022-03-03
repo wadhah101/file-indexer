@@ -25,3 +25,5 @@ indexing "indexFiles" folder and running "early innocence" will give you as a re
 
 
 ## Testing 
+
+An integrated github action runs maven tests 
